@@ -67,10 +67,34 @@ print flipside('carpets')
 
 #Problem 5
 
-def convertFromSeconds(seconds):
+def convertFromSeconds(s):
     """ output: a list, L, of four nonnegative integers that represents s in traditional units of time.
         The first element is the number of days, the second is the number of hours,
         the third is the number of minutes, and the fourth is the number of seconds.
         imput: s, a nonnegative integer number of seconds
     """
+    days = s / (24*60*60)  # # of days
+    s = s % (24*60*60)     # the leftover
+    hours = s / (60*60)
+    s = s % (60*60)
+    minutes = s / 60
+    seconds = s % 60
+    return [days, hours, minutes, seconds]
 
+print convertFromSeconds(200000)
+
+#Problem 6
+
+def front3(str):
+
+    """ output: front3 returns a new string that is the first three characters of the imput string repeated
+    three tiems. If the imput string is less than three characters long, the function returns the entire string
+    repeated three times.
+    imput: a string
+    """
+
+  return 3*str[:3]
+
+
+print front3('string')
+print front3('Ha')
