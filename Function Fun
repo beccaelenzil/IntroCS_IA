@@ -92,8 +92,7 @@ def front3(str):
     repeated three times.
     imput: a string
     """
-
-  return 3*str[:3]
+    return 3*str[:3]
 
 
 print front3('string')
