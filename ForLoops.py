@@ -84,24 +84,27 @@ def dot(L,K):
     if len(L) != len(K):
         result = 0
     else:
-        for x in range(L):
-            result = result + (x*K[x])
+        for x in range(len(L)):
+            result = result + (L[x]*K[x])
 
     return result
 
 # Tests
 #
-'''
-print "dot( [5,3], [6,4] )     42.0 ==", dot( [5,3], [6,4] )
+
+print "dot( [5,3], [6,4] )     42.0 ==", dot( [5,3], [6,4])
 print "dot( [1,2,3,4], [10,100,1000,10000] )  43210.0 ==", dot( [1,2,3,4], [10,100,1000,10000] )
 print "dot( [5,3], [6] )        0.0 ==", dot( [5,3], [6] )
 print "dot( [], [6] )           0.0 ==", dot( [], [6] )
 print "dot( [], [] )            0.0 ==", dot( [], [] )
-'''
+
 #Problem 1e
 
 def count_evens(L):
-
+    """loop-based function that counts the number of even integers in a given array
+    input: an array L (a list?)
+    output: an integer that represents the number of even integers in the array
+    """
     result = 0
     for x in L:
         if x%2 == 0:
@@ -111,3 +114,24 @@ def count_evens(L):
 print "count_evens([2, 1, 2, 3, 4], 3 == ", count_evens([2, 1, 2, 3, 4])
 print "count_evens([2, 2, 0]), 2 == ", count_evens([2, 2, 0])
 print "count_evens([1, 3, 5]), 0 == ", count_evens([1, 3, 5])
+
+
+#Problem 1f
+
+def count9(L):
+    """loop-based function that counts the number of 9s in a given array
+        input: an array L (a list?)
+        output: an integer representing the number of 9s in a given array
+    """
+    result = 0
+    for x in L:
+        if x == 9:
+            result = result + 1
+    return result
+
+# Tests
+
+print "count9([1, 2, 9]), 1 == ",count9([1, 2, 9])
+print "count9([1, 9, 9]), 2 == ",count9([1, 9, 9])
+print "count9([1, 9, 9, 3, 9]), 3 == ",count9([1, 9, 9, 3, 9])
+
