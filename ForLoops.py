@@ -40,3 +40,74 @@ print "power(5,2): should be 25 == ", power(5,2)
 print "power(42,0): should be 1 == ", power(42,0)
 print "power(0,42): should be 0 == ", power(0,42)
 print "power(0,0): should be 1 == ", power(0,0)
+
+#Problem 1c
+
+def mult(n,m):
+    """loop-based function that multiplies two numbers together
+        input: two integers, m and n
+        output: the product of m times n
+    """
+    result = 0
+
+    if m == 0 or n == 0:
+        result = 0
+
+    elif n > 0:
+        for x in range(n):
+            result = result + m
+    else:
+        for x in range(-n):
+            result = result - m
+    return result
+
+# Tests
+
+print "mult(6,7)    42 ==", mult(6,7)
+print "mult(6,-7)  -42 ==", mult(6,-7)
+print "mult(-6,7)  -42 ==", mult(-6,7)
+print "mult(-6,-7)  42 ==", mult(-6,-7)
+print "mult(6,0)     0 ==", mult(6,0)
+print "mult(0,7)     0 ==", mult(0,7)
+print "mult(0,0)     0 ==", mult(0,0)
+
+
+#Problem 1d
+
+def dot(L,K):
+    """ Loop-based function that finds the dot product of the lists L and K
+        input: Two lists with numeric values, L and K
+        output: the dot product of lists L and K
+    """
+    result = 0
+
+    if len(L) != len(K):
+        result = 0
+    else:
+        for x in range(L):
+            result = result + (x*K[x])
+
+    return result
+
+# Tests
+#
+'''
+print "dot( [5,3], [6,4] )     42.0 ==", dot( [5,3], [6,4] )
+print "dot( [1,2,3,4], [10,100,1000,10000] )  43210.0 ==", dot( [1,2,3,4], [10,100,1000,10000] )
+print "dot( [5,3], [6] )        0.0 ==", dot( [5,3], [6] )
+print "dot( [], [6] )           0.0 ==", dot( [], [6] )
+print "dot( [], [] )            0.0 ==", dot( [], [] )
+'''
+#Problem 1e
+
+def count_evens(L):
+
+    result = 0
+    for x in L:
+        if x%2 == 0:
+            result = result + 1
+    return result
+
+print "count_evens([2, 1, 2, 3, 4], 3 == ", count_evens([2, 1, 2, 3, 4])
+print "count_evens([2, 2, 0]), 2 == ", count_evens([2, 2, 0])
+print "count_evens([1, 3, 5]), 0 == ", count_evens([1, 3, 5])
