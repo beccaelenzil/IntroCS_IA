@@ -28,7 +28,7 @@ def play(user_name):
                     print 'Incorrect :('
             except:
                 print 'Enter an integer'
-    if raw_input('Good job! Type yes to play again') == 'yes':
+    if raw_input('Good job! Type "yes" to play again. If you do not wish to play again (but you should!), type "no".') == 'yes':
         play(user_name)
     else:
         print 'Goodbye :('
