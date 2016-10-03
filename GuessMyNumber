@@ -1,0 +1,31 @@
+import random
+
+def play():
+
+        compnumber = random.randint(1, 100)
+        userguess = raw_input('Enter your guess.')
+
+        while userguess != compnumber:
+            try:
+                userguess = int(userguess)
+                if userguess == compnumber:
+                    print 'Correct! Good job.'
+                else:
+                     #ADD CODE HERE FOR LESS THAN OR GREATER THAN
+                    print 'Incorrect :('
+                    userguess = raw_input('Enter your guess.')
+
+            except:
+                userguess = raw_input('Enter an integer.')
+
+
+def instructions():
+    print "Welcome to Guess my Number! I will randomly choose a number and you have to guess what it is."
+    print "If you guess correctly, you win! If you guess incorrectly, I will tell you your number is either too high or too low."
+    print "Then, you can guess again."
+
+def main():
+    instructions()
+    play()
+
+main()
