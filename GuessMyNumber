@@ -1,3 +1,5 @@
+#Enhancement: After the game ends, computer diplays the number of tries it took to guess the number
+
 import random
 
 def play():

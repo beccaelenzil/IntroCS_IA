@@ -41,6 +41,30 @@ print "power(42,0): should be 1 == ", power(42,0)
 print "power(0,42): should be 0 == ", power(0,42)
 print "power(0,0): should be 1 == ", power(0,0)
 
+#Problem 1b
+
+def summedOdds(L):
+
+    """ loop-based function that sums the odd elements in list L
+        input: L, a list of integers
+        output: the sum of the odd elements in list L
+    """
+    result = 0
+    element = 0
+
+    for e in L:
+        if element%2 != 0:
+            result = result + L(element)
+            element = element + 1
+
+    return result
+
+# tests!
+
+print "summedOdds( [4,5,6] ): should be 5 == ", summedOdds([4,5,6])
+print "summedOdds( range(3,10) ): should be 24 == ", summedOdds(range(3,10))
+
+
 #Problem 1c
 
 def mult(n,m):

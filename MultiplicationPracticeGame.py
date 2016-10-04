@@ -1,3 +1,6 @@
+#Enhancement: User enters name and each problem is adressed to the user
+#Enhancement: Play again function
+
 import random
 
 def instructions():
