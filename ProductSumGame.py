@@ -1,3 +1,7 @@
+#Enhancement: play again function
+#Enhancement: diplays the player's score. Player gets two points for each correct answer, and loses one point for each incorrect answer
+#Enhancement: Player gets to pick the number of problems
+
 import random
 
 def instructions():
