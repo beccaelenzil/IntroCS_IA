@@ -1,4 +1,4 @@
-Total Score:
+Total Score: 9/9
 Notes: Glad you worked on the ASCII art challenge. I would love to see you give more of them a try!
 
 Make sure you title all your python files with .py
@@ -38,10 +38,16 @@ count9([1, 9, 9]), 2 ==  2 True
 count9([1, 9, 9, 3, 9]), 3 ==  3 True
 
 -------------------------------------
-Problem 2) Multiplication Practice Game --- Score:
-Notes:
+Problem 2) Multiplication Practice Game --- Score: 3/3
+Notes: Play again is a nice feature. Consider assigning the user response to
+
+"raw_input('Good job! Type "yes" to play again. If you do not wish to play again (but you should!), type "no".')"
+
+to a variable such as play_again, and then use play_again.lower()
+That would allow 'Yes', 'yes', and 'YES' to all be valid answers.
+Let me know if you have questions about this.
 
 -------------------------------------
-Problem 3) Guess My Number --- Score:
-Notes:
+Problem 3) Guess My Number --- Score: 3/3
+Notes: Nice counter
 
