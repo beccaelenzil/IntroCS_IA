@@ -16,34 +16,45 @@ def play():
 
 #Asks user for number of problems
     numberofproblems = raw_input('How many problems would you like?')
-    try:
-        numberofproblems = int(numberofproblems)
-    except:
-        raw_input("Enter an integer")
+    while numberofproblems.isdigit()  == False:
+        numberofproblems = raw_input("Enter an integer")
+
+    numberofproblems = int(numberofproblems)
 
 #Set score = 0
     score = 0
 
 #User gets to chose their difficulty level
-    difficulty = raw_input("Would you like level 1, 2, or 3?")
 
-    try:
-        difficulty  = int(difficulty)
-        if difficulty == 1:
-            low = 1
-            high = 5
-        elif difficulty == 2:
-            low = 1
-            high = 10
-        elif difficulty == 3:
-            low = 1
-            high = 15
-        else:
-            difficulty = raw_input("Enter a number in range 1-3. Would you like level 1, 2, or 3?")
-    except:
+    difficulty = raw_input("Would you like level 1, 2, or 3?")
+    while difficulty.isdigit() == False:
         difficulty = raw_input("Enter a number in range 1-3. Would you like level 1, 2, or 3?")
 
-#For loop that gives the user the requested number of problems
+    difficulty = int(difficulty)
+
+    while difficulty > 3 :
+        difficulty = raw_input("Enter a number in range 1-3. Would you like level 1, 2, or 3?")
+        try:
+            difficulty = int(difficulty)
+        except:
+            difficulty = raw_input("Enter a number in range 1-3. Would you like level 1, 2, or 3?")
+
+
+    if difficulty == 1:
+        low = 1
+        high = 5
+    elif difficulty == 2:
+        low = 1
+        high = 10
+    elif difficulty == 3:
+        low = 1
+        high = 15
+    else:
+        "You didn't enter 1-3. I'm going to pick for you"
+        low = 1
+        high = 20
+
+    # For loop that gives the user the requested number of problems
     for i in range(numberofproblems):
         number1 = random.randint(low,high)
         number2 = random.randint(low,high)
