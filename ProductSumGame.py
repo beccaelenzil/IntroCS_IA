@@ -14,8 +14,9 @@ def instructions():
     print
 
 def play():
-
-#Asks user for number of problems
+    """
+    Asks user for number of problems
+    """
     numberofproblems = raw_input('How many problems would you like?')
     while numberofproblems.isdigit()  == False:
         numberofproblems = raw_input("Enter a positive integer")
@@ -41,9 +42,6 @@ def play():
 
         difficulty = int(difficulty)
 
-
-
-
     if difficulty == 1:
         low = 1
         high = 5
@@ -58,7 +56,7 @@ def play():
         low = 1
         high = 20
 
-    # For loop that gives the user the requested number of problems
+    #For loop that gives the user the requested number of problems
     for i in range(numberofproblems):
         number1 = random.randint(low,high)
         number2 = random.randint(low,high)
@@ -100,7 +98,9 @@ def play():
                 print 'Enter integer'
 
 def repeat():
-#Function asks the user if they would like to play again, and if so, calls main2 which leaves out the instructions
+    """
+    Function asks the user if they would like to play again, and if so, calls main2 which leaves out the instructions
+    """
     print
     playagain = raw_input("Would you like to play again?")
     if playagain == 'yes':
@@ -109,13 +109,17 @@ def repeat():
         print 'Goodbye!'
 
 def main():
-#Function for the first time a user plays the game
+    """
+    Function for the first time a user plays the game
+    """
     instructions()
     play()
     repeat()
 
 def main2():
-#Function that lets the user play again for the second time without repeating the instructions
+    """
+    Function that lets the user play again for the second time without repeating the instructions
+    """
     play()
     repeat()
 
