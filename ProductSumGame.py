@@ -1,6 +1,7 @@
 #Enhancement: play again function
 #Enhancement: diplays the player's score. Player gets two points for each correct answer, and loses one point for each incorrect answer
 #Enhancement: Player gets to pick the number of problems
+#Enhancement: Player gets to pick their level of difficulty
 
 import random
 
@@ -17,7 +18,7 @@ def play():
 #Asks user for number of problems
     numberofproblems = raw_input('How many problems would you like?')
     while numberofproblems.isdigit()  == False:
-        numberofproblems = raw_input("Enter an integer")
+        numberofproblems = raw_input("Enter a positive integer")
 
     numberofproblems = int(numberofproblems)
 
@@ -26,18 +27,21 @@ def play():
 
 #User gets to chose their difficulty level
 
-    difficulty = raw_input("Would you like level 1, 2, or 3?")
-    while difficulty.isdigit() == False:
-        difficulty = raw_input("Enter a number in range 1-3. Would you like level 1, 2, or 3?")
+    #initialize difficulty
+    difficulty = 'hi'
 
-    difficulty = int(difficulty)
-
+    # Deal with valid user input
     while difficulty > 3 :
-        difficulty = raw_input("Enter a number in range 1-3. Would you like level 1, 2, or 3?")
-        try:
-            difficulty = int(difficulty)
-        except:
-            difficulty = raw_input("Enter a number in range 1-3. Would you like level 1, 2, or 3?")
+        #print "they entered a number greater than 3"
+        difficulty = raw_input("Would you like level 1, 2, or 3? Enter a number in the range 1-3.")
+
+        while difficulty.isdigit() == False:
+            #print "they entered text"
+            difficulty = raw_input("Would you like level 1, 2, or 3? Enter a number in the range 1-3.")
+
+        difficulty = int(difficulty)
+
+
 
 
     if difficulty == 1:
@@ -47,7 +51,7 @@ def play():
         low = 1
         high = 10
     elif difficulty == 3:
-        low = 1
+        low = 5
         high = 15
     else:
         "You didn't enter 1-3. I'm going to pick for you"
