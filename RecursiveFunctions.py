@@ -20,18 +20,17 @@ def fibIter(n):
     """"Function that returns the nth term of the Fibonnaci sequence. The Fibonnaci sequence
     is found by adding the previous two terms.
     """
+    result = [0,1]
 
-    result = []
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        for x in range(2, n+1):
+            result.append(result[x-1] + result[x-2])
+        return result[-1]
 
-    for i in range(n+1):
-        if i == 0:
-            result.append(0)
-        elif i == 1:
-            result.append(1)
-        else:
-            result.append(result[i-1] + result[i-2])
-
-    return result[-1]
 
 print "fibIter(5) == 5 = ",fibIter(5)," : ", 5 == fibIter(5)
 print "fibIter(11) == 89 = ",fibIter(11)," : ", 89 == fibIter(11)
@@ -63,5 +62,6 @@ def listReverseIter(L):
 # List Reverse Tests
 print "listReverse([1,2,3,4]) == [4,3,2,1] = ",listReverse([1,2,3,4])," : ",listReverse([1,2,3,4]) == [4,3,2,1]
 print "listReverseIter([1,2,3,4]) == [4,3,2,1] = ",listReverseIter([1,2,3,4])," : ",listReverseIter([1,2,3,4]) == [4,3,2,1]
+
 
 
