@@ -1,6 +1,5 @@
 #https://trinket.io/python/85ef3ed403
 
-
 def fib(n):
     """Function that returns the nth term of the Fibonnaci sequence. The Fibonnaci sequence
         is found by adding the previous two terms.
