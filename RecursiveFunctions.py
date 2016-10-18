@@ -62,5 +62,51 @@ def listReverseIter(L):
 print "listReverse([1,2,3,4]) == [4,3,2,1] = ",listReverse([1,2,3,4])," : ",listReverse([1,2,3,4]) == [4,3,2,1]
 print "listReverseIter([1,2,3,4]) == [4,3,2,1] = ",listReverseIter([1,2,3,4])," : ",listReverseIter([1,2,3,4]) == [4,3,2,1]
 
+#Binary Conversion Challenge
+
+def isOdd(n):
+    """
+    Function that takes an integer n, and determines if n is an even or odd number.
+    """
+
+    if n%2 == 0:
+        return False
+    else:
+        return True
+
+print isOdd(1)
 
 
+def numToBinary(N):
+      """
+      Recursive-based function that takes an in an integer N, and returns the binary value for that integer.
+      """
+      if N == 0:
+        return ''
+      elif N%2 == 1:
+        return numToBinary(N/2) + '1'
+      else:
+        return numToBinary(N/2) + '0'
+
+print numToBinary(4)
+print numToBinary(0)
+print numToBinary(10)
+print numToBinary(42)
+print numToBinary(100)
+
+'''
+def binaryToNum(S):
+  """
+  Function that takes an argument S, a binary value, and returns the integer that the binary value represents.
+  """
+  if S == '':
+    return 0
+
+  # if the last digit is a '1'
+  elif S[-1] == '1':
+    return  _____________________ + 1
+
+  else: # last digit must be '0'
+    return  _____________________ + 0
+
+'''
