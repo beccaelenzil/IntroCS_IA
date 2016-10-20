@@ -91,7 +91,7 @@ def ave_squared_displacement(numtrials):
     #print len(resultssquared)
     return float(sum(resultssquared))/len(resultssquared)
 
-print ave_squared_displacement(10000)
+print ave_squared_displacement(1000)
 
 '''
 1) What is the average final signed-displacement for a random walker after
@@ -106,13 +106,19 @@ average signed-displacement function showed, for example after running the funct
 with 10000 trials, it returned average signed-displacement values of 0.0466, -0.011, and 0.0032.
 This logic holds true for N number of steps as well. The average final signed-displacement
 value would still be 0, although this value will become increasingly accurate with increasing
-numbers of trials.
+numbers of trials. I approached this question by just thinking logically about probabilities.
+I guessed that the values would be close to zero, and then confirmed with my function.
 
 2) What is the average squared-displacement for a random walker after making
  100 random steps? What about after N random steps, in terms of N? Be sure you
  square the signed displacements before you sum the values in order to average them!
 
 The average squared-displacement for a random walker after making 100 random steps is 100.
-
+After N random steps, the average squared-displacement is N. My function returned values
+of 100.9328, 100.11, and 99.5768 when the function averaged the square of 10000 trials. This
+makes sense because in this case, the function assumed the sleep walker was taking 100 steps.
+This question was harder for me to think about in terms of probabilities, so instead I used
+my function to test out different values. I found that the number of random steps taken was
+always close to the value that the function returned.
 
 '''
