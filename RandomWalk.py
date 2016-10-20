@@ -68,13 +68,12 @@ def ave_signed_displacement(numtrials):
     results = []
     for i in range(numtrials):
         results.append(rwposPlain(0, 100))
-    print results
-    print sum(results)
-    print len(results)
+    #print results
+    #print sum(results)
+    #print len(results)
     return float(sum(results))/len(results)
 
-print ave_signed_displacement(4)
-print
+#print ave_signed_displacement(10000)
 
 def ave_squared_displacement(numtrials):
     """Funtion that computes the average squared dispacement value for the rwposPlain function
@@ -86,10 +85,34 @@ def ave_squared_displacement(numtrials):
         results.append(rwposPlain(0, 100))
     for i in results:
         resultssquared.append(i**2)
-    print results
-    print resultssquared
-    print sum(resultssquared)
-    print len(resultssquared)
+    #print results
+    #print resultssquared
+    #print sum(resultssquared)
+    #print len(resultssquared)
     return float(sum(resultssquared))/len(resultssquared)
 
-#print ave_squared_displacement(4)
+print ave_squared_displacement(10000)
+
+'''
+1) What is the average final signed-displacement for a random walker after
+making 100 random steps? What about after N random steps? As described above,
+the signed-displacement is just the output of rwpos minus the start location. Do not use abs.
+
+The average signed-displacement for a random walker after making 100 random steps
+is 0. This makes sense logically because for every step, the random walker has a 50% chance
+of walking forwards and a 50% chance of walking backwards. So, as the walker takes more and more
+steps, you would expect the walker to end up very close to where it started. This is what my
+average signed-displacement function showed, for example after running the function three times
+with 10000 trials, it returned average signed-displacement values of 0.0466, -0.011, and 0.0032.
+This logic holds true for N number of steps as well. The average final signed-displacement
+value would still be 0, although this value will become increasingly accurate with increasing
+numbers of trials.
+
+2) What is the average squared-displacement for a random walker after making
+ 100 random steps? What about after N random steps, in terms of N? Be sure you
+ square the signed displacements before you sum the values in order to average them!
+
+The average squared-displacement for a random walker after making 100 random steps is 100.
+
+
+'''
