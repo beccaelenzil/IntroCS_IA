@@ -106,7 +106,7 @@ average signed-displacement function showed, for example after running the funct
 with 10000 trials, it returned average signed-displacement values of 0.0466, -0.011, and 0.0032.
 This logic holds true for N number of steps as well. The average final signed-displacement
 value would still be 0, although this value will become increasingly accurate with increasing
-numbers of trials. I approached this question by just thinking logically about probabilities.
+numbers of trials. I approached this question by thinking logically about probabilities.
 I guessed that the values would be close to zero, and then confirmed with my function.
 
 2) What is the average squared-displacement for a random walker after making

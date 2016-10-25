@@ -53,30 +53,61 @@ def diagonalize(width, height):
 #A = diagonalize(3,5)
 #print printBoard(A)
 
-def innerCells1(width, height):
-    A = createBoard(width, height)
-    printBoard(A)
-    for row in range(height):
-        for col in range(width):
-            if row == 0:
-                A[row][col] = 0
-            elif row == width-1:
-                A[row][col] = 0
-            elif col == 0:
-                A[row][col] = 0
-            elif col == height-1:
-                A[row][col] = 0
-            else:
-                A[row][col] = 1
-    return A
-
 def innerCells(width, height):
     A = createBoard(width, height)
-    for row in range[1:height-2]:
-        for col in range[1:width-2]:
+    for row in range(1, height-1):
+        for col in range(1, width-1):
             A[row][col] = 1
     return A
 
 
-A = innerCells(5,5)
+#A = innerCells(5,5)
+#printBoard(A)
+
+def randomCells(width, height):
+    A = createBoard(width, height)
+    for row in range(1, height-1):
+        for col in range(1, width-1):
+            A[row][col] = random.randint(0,1)
+    return A
+
+A = randomCells(5,5)
 printBoard(A)
+print
+
+def copy(A):
+    height = len(A)
+    width = len(A[0])
+    newA = randomCells(width, height)
+    for row in range(height):
+        for col in range(width):
+            newA[row][col] = A[row][col]
+    return newA
+
+#newA = copy(A)
+#printBoard(newA)
+
+def innerReverse(A):
+    height = len(A)
+    width = len(A[0])
+    newA = randomCells(width, height)
+    for row in range(1, height-1):
+        for col in range(1, width-1):
+            if A[row][col] == 1:
+                newA[row][col] = 0
+            else:
+                newA[row][col] = 1
+    return newA
+
+newA = innerReverse(A)
+printBoard(newA)
+
+def countNeighbors(row, col, A):
+
+
+def next_life_generation(A):
+    """ makes a copy of A and then advances one
+        generation of Conway's game of life within
+        the *inner cells* of that copy.
+        The outer edge always stays at 0.
+    """
