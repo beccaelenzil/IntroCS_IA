@@ -68,12 +68,12 @@ def randomCells(width, height):
     A = createBoard(width, height)
     for row in range(1, height-1):
         for col in range(1, width-1):
-            A[row][col] = random.randint(0,1)
+            A[row][col] = random.choice([0,1])
     return A
 
-A = randomCells(5,5)
-printBoard(A)
-print
+#A = randomCells(5,5)
+#printBoard(A)
+#print
 
 def copy(A):
     height = len(A)
@@ -99,10 +99,22 @@ def innerReverse(A):
                 newA[row][col] = 1
     return newA
 
-newA = innerReverse(A)
-printBoard(newA)
+#newA = innerReverse(A)
+#printBoard(newA)
 
 def countNeighbors(row, col, A):
+    counter = 0
+    for r in range(row-1, row+2):
+        for c in range(col-1, col+2):
+            if A[r][c] == 1:
+                counter = counter + 1
+    if A[row][col] == 1:
+        counter = counter - 1
+    return counter
+
+#A = randomCells(5,5)
+#printBoard(A)
+#print countNeighbors(1,1,A)
 
 
 def next_life_generation(A):
@@ -111,3 +123,21 @@ def next_life_generation(A):
         the *inner cells* of that copy.
         The outer edge always stays at 0.
     """
+    newA = copy(A)
+    height = len(A)
+    width = len(A[0])
+    for row in range(1, width-1):
+        for col in range(1, height-1):
+            if countNeighbors(row, col, A) < 2:
+                newA[row][col] = 0
+            if countNeighbors(row, col, A) > 3:
+                newA[row][col] = 0
+            if countNeighbors(row, col, A) == 3:
+                newA[row][col] = 1
+    return newA
+
+A = randomCells(5,5)
+newA = next_life_generation(A)
+printBoard(A)
+print " "
+printBoard(newA)
