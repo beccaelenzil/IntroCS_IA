@@ -7,6 +7,7 @@
 
 import random
 import time
+import matplotlib.pyplot as plt
 
 def rs():
     """ rs chooses a random step and returns it
@@ -82,16 +83,30 @@ def ave_squared_displacement(numtrials):
     results = []
     resultssquared = []
     for i in range(numtrials):
-        results.append(rwposPlain(0, 100))
+        results.append(abs(rwposPlain(0, 100)))
     for i in results:
         resultssquared.append(i**2)
     #print results
     #print resultssquared
     #print sum(resultssquared)
     #print len(resultssquared)
-    return float(sum(resultssquared))/len(resultssquared)
+    #print results
+    #print " "
+    #print resultssquared
+    return [float(sum(resultssquared))/len(resultssquared), results, resultssquared]
 
-print ave_squared_displacement(1000)
+
+[ave, results, resultssquared] = ave_squared_displacement(10000)
+
+plt.figure(0)
+plt.hist(results)
+plt.title("pos")
+
+
+plt.figure(1)
+plt.hist(resultssquared)
+plt.title("pos sq")
+
 
 '''
 1) What is the average final signed-displacement for a random walker after
