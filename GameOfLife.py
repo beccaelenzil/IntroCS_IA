@@ -136,8 +136,8 @@ def next_life_generation(A):
                 newA[row][col] = 1
     return newA
 
-A = randomCells(5,5)
-newA = next_life_generation(A)
-printBoard(A)
-print " "
-printBoard(newA)
+#A = randomCells(5,5)
+#newA = next_life_generation(A)
+#printBoard(A)
+#print " "
+#printBoard(newA)
