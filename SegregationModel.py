@@ -69,6 +69,7 @@ def countNeighbors(A):
             elif A[row][col] == ' ':
                 ratio = None
             print [row, col]
+
             return ratio
 
 
