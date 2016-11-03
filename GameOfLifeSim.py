@@ -11,9 +11,9 @@ def constants():
 def drawBoard(A):
     [width,height,cell_size,spacing] = constants()
     for row in range(height):
-        x_pos = (cell_size + spacing)*(col)
+        x_pos = (cell_size + spacing)*(row)
         for col in range(width):
-            y_pos = (cell_size + spacing)*(row)
+            y_pos = (cell_size + spacing)*(col)
             if A[row][col] == 1:
                 box(pos=(x_pos,y_pos,0), size=(cell_size,cell_size,0), color=color.white)
             elif A[row][col] == 0:
