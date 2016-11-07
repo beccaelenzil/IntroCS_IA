@@ -70,8 +70,13 @@ def countNeighbors(A):
             else:
                 ratio = None
             print [row, col]
+<<<<<<< HEAD
     return ratioBoard
 
+=======
+
+            return ratio
+>>>>>>> origin/master
 
 
 
