@@ -33,8 +33,8 @@ def populateBoard(width, height, percX, percO):
     pop = numberofXcells*['X'] + numberofOcells* ['O'] + numberofemptycells*[" "]
     pop = random.sample(pop, len(pop))
     i = 0
-    for row in range(height-1):
-        for col in range(width-1):
+    for row in range(height):
+        for col in range(width):
             A[row][col] = pop[i]
             i+=1
     return A
@@ -50,6 +50,7 @@ def countNeighbors(A):
     counterO = 0
     counterTotal = 0
     ratio = 0
+    ratioBoard = createBoard(width, height)
 
     for row in range(height):
         for col in range(width):
@@ -66,10 +67,11 @@ def countNeighbors(A):
             elif A[row][col] == 'O':
                 counterO == counterO - 1
                 ratio = float(counterO)/counterTotal
-            elif A[row][col] == ' ':
+            else:
                 ratio = None
             print [row, col]
-            return ratio
+    return ratioBoard
+
 
 
 
