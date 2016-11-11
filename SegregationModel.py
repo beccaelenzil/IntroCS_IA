@@ -96,6 +96,7 @@ def index(A):
         for col in range(1, width-1):
             if A[row][col] == " ":
                 emptylist.append([row, col])
+    random.shuffle(emptylist)
     return emptylist
 
 
