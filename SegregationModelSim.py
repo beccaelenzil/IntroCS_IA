@@ -1,4 +1,4 @@
-from SegregationModel import *
+from SegregationModelFile import *
 from visual import *
 
 def constants():
@@ -36,8 +36,31 @@ SegregationModel.exit = True
 A = populateBoard(w, h, .4, .4)
 drawBoard(A)
 
+def segregationIndex(A):
+    ratioBoard = countNeighbors(A)
+    segregationList = []
+    height = len(A)
+    width = len(A[0])
+    for row in range(height):
+        for col in range(width):
+            if A[row][col] != ' ':
+                segregationList.append(ratioBoard[row][col])
+            else:
+                segregationList = segregationList
+
+
+    segregationIndex = sum(segregationList)/len(segregationList)
+
+    return segregationIndex
+
+
+'''
 while True:
     A = SegregationModel(A, .5, .4, .4)
     drawBoard(A)
     rate(30)
+'''
+
+newA = SegregationModel(A, .4, .4, .4)
+printBoard(countNeighbors(newA))
 
