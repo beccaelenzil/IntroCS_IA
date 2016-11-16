@@ -51,8 +51,6 @@ def populateBoard(width, height, percX, percO):
             i+=1
     return A
 
-
-
 #A = populateBoard(5, 5, 0.4, 0.4)
 #printBoard(A)
 
@@ -62,7 +60,7 @@ def countNeighbors(A):
 
     ratioBoard = createBoard(width, height)
     counterTotalBoard = createBoard(width, height)
-    counterOBoard = createBoard(width, height)
+    #counterOBoard = createBoard(width, height)
 
     for row in range(1, height-1):
         for col in range(1, width-1):
@@ -78,20 +76,19 @@ def countNeighbors(A):
             counterTotal = counterO + counterX - 1
 
             if A[row][col] == 'O' and counterTotal != 0:
-                counterO == counterO - 1
+                counterO = counterO - 1
                 ratio = float(counterO)/counterTotal
             elif A[row][col] == 'X' and counterTotal != 0:
                 counterX = counterX - 1
                 ratio = float(counterX)/counterTotal
-
             else:
                 ratio = None
             #return ratio
             ratioBoard[row][col] = ratio
             counterTotalBoard[row][col] = counterTotal
-            counterOBoard[row][col] = counterX
+            #counterOBoard[row][col] = counterO
 
-    return counterOBoard
+    return ratioBoard
 
 def index(A):
     height = len(A)
@@ -125,18 +122,16 @@ def SegregationModel(A, threshold, percX, percO):
     return newA
 
 
-A = populateBoard(5, 5, 0.4, 0.4)
+A = populateBoard(10, 10, 0.4, 0.4)
 printBoard(A)
 ratioBoard = countNeighbors(A)
 print " "
-printBoard(ratioBoard)
+#printBoard(ratioBoard)
 print
 #printBoard(ratioBoard)
 #print
 #print index(A)
 newA = SegregationModel(A, .4, .4, .4)
-
-
 
 def segregationIndex(A):
     ratioBoard = countNeighbors(A)
@@ -154,6 +149,9 @@ def segregationIndex(A):
     segregationIndex = sum(segregationList)/len(segregationList)
 
     return segregationIndex
+
+print
+print segregationIndex(newA)
 
 #print
 #print segregationIndex(newA)
