@@ -61,6 +61,8 @@ def countNeighbors(A):
     width = len(A[0])
 
     ratioBoard = createBoard(width, height)
+    OBoard = createBoard(width, height)
+    XBoard = createBoard(width, height)
     counterTotalBoard = createBoard(width, height)
     counterOBoard = createBoard(width, height)
 
@@ -77,8 +79,16 @@ def countNeighbors(A):
 
             counterTotal = counterO + counterX - 1
 
+<<<<<<< Updated upstream:SegregationModelFile.py
             if A[row][col] == 'O' and counterTotal != 0:
                 counterO == counterO - 1
+=======
+            if A[row][col] == 'X' and counterTotal != 0:
+                counterX = counterX - 1
+                ratio = float(counterX)/counterTotal
+            elif A[row][col] == 'O' and counterTotal != 0:
+                counterO = counterO - 1
+>>>>>>> Stashed changes:SegregationModel.py
                 ratio = float(counterO)/counterTotal
             elif A[row][col] == 'X' and counterTotal != 0:
                 counterX = counterX - 1
@@ -86,12 +96,21 @@ def countNeighbors(A):
 
             else:
                 ratio = None
-            #return ratio
+
+
+
             ratioBoard[row][col] = ratio
+            OBoard[row][col] = counterO
+            XBoard[row][col] = counterX
             counterTotalBoard[row][col] = counterTotal
+<<<<<<< Updated upstream:SegregationModelFile.py
             counterOBoard[row][col] = counterX
 
     return counterOBoard
+=======
+
+    return [ratioBoard, OBoard, XBoard, counterTotalBoard]
+>>>>>>> Stashed changes:SegregationModel.py
 
 def index(A):
     height = len(A)
@@ -127,6 +146,7 @@ def SegregationModel(A, threshold, percX, percO):
 
 A = populateBoard(5, 5, 0.4, 0.4)
 printBoard(A)
+<<<<<<< Updated upstream:SegregationModelFile.py
 ratioBoard = countNeighbors(A)
 print " "
 printBoard(ratioBoard)
@@ -158,3 +178,18 @@ def segregationIndex(A):
 #print
 #print segregationIndex(newA)
 
+=======
+print " "
+[ratioBoard, OBoard, XBoard,counterTotalBoard] = countNeighbors(A)
+printBoard(OBoard)
+print " "
+printBoard(XBoard)
+print " "
+printBoard(counterTotalBoard)
+'''
+#print
+#print index(A)
+newA = SegregationModel(A, .4, .4, .4)
+printBoard(newA)
+'''
+>>>>>>> Stashed changes:SegregationModel.py
