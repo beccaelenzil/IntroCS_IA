@@ -59,8 +59,10 @@ while True:
     A = SegregationModel(A, .5, .4, .4)
     drawBoard(A)
     rate(30)
-'''
+
 
 newA = SegregationModel(A, .4, .4, .4)
 printBoard(countNeighbors(newA))
+'''
 
+print segregationIndex(A)
